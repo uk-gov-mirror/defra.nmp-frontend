@@ -10,7 +10,7 @@
 
 @section BeforeContent {
     <div class="noprint">
-        <govuk-back-link asp-action="ExportFieldsOrCropType" asp-controller="Report">@string.Format(Resource.lblBackToYourPlan, Model.Year)</govuk-back-link>
+        <govuk-back-link asp-action="ExportFieldsOrCropType" asp-controller="Report">@Resource.lblBack</govuk-back-link>
     </div>
 
 }
@@ -22,7 +22,7 @@
 }
 @if (Model != null && Model.CropAndFieldReport != null)
 {
-    <div class="govuk-grid-row noprint margin-bottom-forty">
+    <div class="govuk-grid-row noprint">
         <div class="govuk-grid-column-two-thirds-from-desktop">
             <h3 class="govuk-heading-m">@Resource.lblHowtosaveyourplanasaPDF</h3>
             <ol class="govuk-list govuk-list--number">
@@ -32,14 +32,18 @@
             </ol>
             <govuk-button id="cropReportPrintButton" type="button">
                 @Resource.lblPrintOrSaveAsAPDF
-            </govuk-button>
-            <hr>
+            </govuk-button>           
+        </div>
+    </div>
+    <div class="govuk-grid-row noprint">
+        <div class="govuk-grid-column-full">
+            <hr class="seperator_forty">
         </div>
     </div>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
             <span class="govuk-caption-l">@Model.FarmName</span>
-            <h1 class="govuk-heading-xl">
+            <h1 class="govuk-heading-xl margin-botton-thirty">
                 @string.Format(Resource.lblCropAndFieldManagementReport, Model.Year)
             </h1>
             <p class="govuk-body">@string.Format(Resource.lblCreatedOnDate, DateTime.Now.Date.ToLocalTime().Date.ToString("dd MMMM yyyy", CultureInfo.GetCultureInfo("en-GB")))</p>

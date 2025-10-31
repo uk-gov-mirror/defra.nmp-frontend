@@ -382,6 +382,9 @@ a:focus, .govuk-link:focus {
     margin-bottom: 30px !important;
 }
 
+.margin-top-eight {
+    margin-bottom: 8px !important;
+}
 
 .pb-25 {
     padding-bottom: 25px !important;
