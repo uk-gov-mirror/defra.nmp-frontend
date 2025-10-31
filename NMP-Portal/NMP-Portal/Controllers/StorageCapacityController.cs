@@ -1666,7 +1666,7 @@ namespace NMP.Portal.Controllers
             {
                 if (model.MaterialStateID == (int)NMP.Portal.Enums.MaterialState.SolidManureStorage)
                 {
-                    return RedirectToAction("CapacityWeight");
+                    return RedirectToAction("WeightCapacity");
                 }
                 else
                 {

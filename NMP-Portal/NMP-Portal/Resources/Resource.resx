@@ -893,7 +893,7 @@ are in a Nitrate Vulnerable Zone (NVZ)?</value>
     <value>What is the planting date for {0} in these fields?</value>
   </data>
   <data name="lblYouCanChangeYourPlantingDateLater" xml:space="preserve">
-    <value>You can change your planting date later.</value>
+    <value>You can change your sowing date later.</value>
   </data>
   <data name="lblPotato" xml:space="preserve">
     <value>potato </value>
@@ -3101,7 +3101,7 @@ cubic metres per hectare  not set</value>
     <value>September</value>
   </data>
   <data name="lblUseValuesFromRB209" xml:space="preserve">
-    <value>No, use the standard nutrient values from RB209</value>
+    <value>No, use the typical values from the AHDB Nutrient management guide (RB209)</value>
   </data>
   <data name="lblYesUseTheseValues" xml:space="preserve">
     <value>Yes, use these values</value>
@@ -3113,7 +3113,7 @@ cubic metres per hectare  not set</value>
     <value>No, use the values entered on {0}</value>
   </data>
   <data name="lblYesUseTheseStandardNutrientValues" xml:space="preserve">
-    <value>Yes, use these standard nutrient values</value>
+    <value>Yes, use these typical nutrient values</value>
   </data>
   <data name="lblYesUseTheseValuesFromDate" xml:space="preserve">
     <value>Yes, use these values from {0}</value>
@@ -6692,7 +6692,7 @@ livestock manure.</value>
     <value>Do you want to use these typical nutrient values?</value>
   </data>
   <data name="lblNutrientValuesFor" xml:space="preserve">
-    <value>Nutrient values for {0}</value>
+    <value>Typical nutrient values for {0}</value>
   </data>
   <data name="lblTypicalNutrientValues" xml:space="preserve">
     <value>These are typical nutrient values.</value>
@@ -6795,5 +6795,26 @@ livestock manure.</value>
   </data>
   <data name="lblLengthOfTheLay" xml:space="preserve">
     <value>Length of the lay</value>
+  </data>
+  <data name="lblDefaultNutrientValueContentFirst" xml:space="preserve">
+    <value>These values come from the AHDB Nutrient Management Guide (RB209).</value>
+  </data>
+  <data name="lblDefaultNutrientValueContentSecond" xml:space="preserve">
+    <value>Your nutrient values for {0}</value>
+  </data>
+  <data name="lblDefaultNutrientValueContentThird" xml:space="preserve">
+    <value>These values were entered on {0}.</value>
+  </data>
+  <data name="lblDefaultNutrientValueContentFourth" xml:space="preserve">
+    <value>Do you want to use these nutrient values?</value>
+  </data>
+  <data name="lblValuePerTonne" xml:space="preserve">
+    <value>Value per tonne</value>
+  </data>
+  <data name="lblValueTotal" xml:space="preserve">
+    <value>{0} (total)</value>
+  </data>
+  <data name="lblOptions" xml:space="preserve">
+    <value>options</value>
   </data>
 </root>

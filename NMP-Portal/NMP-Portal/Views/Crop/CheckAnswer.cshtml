@@ -277,7 +277,8 @@
             else
             {
                 <h1 class="govuk-heading-l">
-                    @string.Format(Resource.lblUpdateCropGroupNameForHarvestYear, Model.CropGroupName, Model.Year)
+                        @string.Format(Resource.lblUpdateCropGroupNameForHarvestYear,(Model.IsComingFromRecommendation.HasValue && Model.IsComingFromRecommendation.Value)? Model.FieldName:Model.CropGroupName, Model.Year)
+                    
                 </h1>
 
                 <govuk-inset-text>
@@ -1002,7 +1003,7 @@
                 }
                 else
                 {
-                    @Resource.lblUpdateThisCropGroup
+                    @((Model.IsComingFromRecommendation.HasValue && Model.IsComingFromRecommendation.Value)?$"{Resource.lblUpdate} {Model.FieldName}":Resource.lblUpdateThisCropGroup)
                 }
             </govuk-button>
             <p class="govuk-body cancel-link">

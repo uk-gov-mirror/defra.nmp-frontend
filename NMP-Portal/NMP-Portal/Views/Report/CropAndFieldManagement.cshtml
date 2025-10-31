@@ -468,7 +468,7 @@
                                        
                                             @foreach (var orgManure in mp.OrganicManures)
                                             {                                        
-                                                <h4 class="govuk-heading-s">@string.Format(Resource.lblApplicationDateWithDate, orgManure.ApplicationDate.ToLocalTime().Date.ToString("dd MMMM yyyy", CultureInfo.GetCultureInfo("en-GB")))</h4>
+                                                <h4 class="govuk-heading-s">@string.Format(Resource.lblApplicationDateWithDate, orgManure.ApplicationDate?.ToLocalTime().Date.ToString("dd MMMM yyyy", CultureInfo.GetCultureInfo("en-GB")))</h4>
 
                                                 <div class="govuk-grid-column-one-half">
                                                     <table class="govuk-table">

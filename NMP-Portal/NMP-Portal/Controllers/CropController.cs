@@ -3892,6 +3892,36 @@ namespace NMP.Portal.Controllers
                         }
                     }
                 }
+                else
+                {
+                    DateTime currentDate = DateTime.Now;
+                    DateTime harvestYearEndDate = new DateTime(currentDate.Year, 7, 31);
+                    int currentHarvestYear = 0;
+                    if (currentDate > harvestYearEndDate)
+                    {
+                        currentHarvestYear = currentDate.Year + 1;
+                    }
+                    else
+                    {
+                        currentHarvestYear = currentDate.Year;
+                    }
+                    for (int i = currentHarvestYear-1; i <= currentHarvestYear; i++)
+                    {
+                        var harvestYear = new HarvestYear
+                        {
+                            Year = i,
+                            EncryptedYear = _farmDataProtector.Protect(i.ToString()),
+                            IsAnyPlan = false
+                        };
+
+                        if (currentHarvestYear - 1 == i)
+                        {
+                            harvestYear.IsThisOldYear = true;
+                        }
+                        model.HarvestYear.Add(harvestYear);
+                    }
+                        
+                }
                 if (model.HarvestYear.Count > 0)
                 {
                     model.HarvestYear = model.HarvestYear.OrderByDescending(x => x.Year).ToList();
@@ -7087,6 +7117,10 @@ namespace NMP.Portal.Controllers
                             model.HarvestYear.Add(harvestYear);
                         }
                     }
+                }
+                else
+                {
+                    return RedirectToAction("HarvestYearForPlan", new { q = q, year = _farmDataProtector.Protect(model.Year.ToString()), isPlanRecord = true });
                 }
                 if (model.HarvestYear.Count > 0)
                 {

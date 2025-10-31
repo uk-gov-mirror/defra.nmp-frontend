@@ -17,7 +17,18 @@
     }
     else
     {
-        backAction = "ManureType";
+        if (Model.ManureGroupIdForFilter == (int)NMP.Portal.Enums.ManureTypes.OtherSolidMaterials || Model.ManureGroupIdForFilter == (int)NMP.Portal.Enums.ManureTypes.OtherLiquidMaterials)
+        {
+            backAction = "ManureGroup";
+        }
+        if (Model.ManureTypeId == (int)NMP.Portal.Enums.ManureTypes.OtherSolidMaterials || Model.ManureTypeId == (int)NMP.Portal.Enums.ManureTypes.OtherLiquidMaterials)
+        {
+            backAction="OtherMaterialName";
+        }
+        else
+        {
+            backAction = "ManureType";
+        }
     }
 }
 

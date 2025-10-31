@@ -29,7 +29,7 @@
             @if (TempData["CropTypeError"]?.ToString() == Resource.lblNoFieldsAreAvailable)
             {
                 <govuk-error-summary-item>
-                    <h4 class="govuk-heading-s">@Resource.lblIncorrectSecondCropType</h4>
+                    @* <h4 class="govuk-heading-s">@Resource.lblIncorrectSecondCropType</h4> *@
                     <p class="govuk-body-m">
                         @string.Format(Resource.lblYouCannotAddTheCropTypeSelectedAsASecondCrop, Model.Year)
                     </p>

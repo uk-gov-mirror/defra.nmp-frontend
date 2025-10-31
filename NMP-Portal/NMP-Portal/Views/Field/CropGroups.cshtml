@@ -149,6 +149,8 @@
             <input class="govuk-visually-hidden" type="hidden" asp-for="@Model.IsPreviousYearGrass" value="@Model.IsPreviousYearGrass.ToString().ToLower()" />
         }
         <input class="govuk-visually-hidden" type="hidden" asp-for="@Model.CopyExistingField" value="@Model.CopyExistingField.ToString().ToLower()" />
+        <input class="govuk-visually-hidden" type="hidden" asp-for="@Model.EncryptedIsUpdate" />
+        <input class="govuk-visually-hidden" type="hidden" asp-for="@Model.EncryptedFieldId" />
     </div>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">

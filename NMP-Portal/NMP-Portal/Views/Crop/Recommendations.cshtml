@@ -563,7 +563,7 @@
                                     {
                                         <tr class="govuk-table__row">
                                             <td class="govuk-table__cell">
-                                                @(orgManure.ApplicationDate.Date != null ? orgManure.ApplicationDate.ToLocalTime().Date.ToString("dd/MM/yyyy", CultureInfo.GetCultureInfo("en-GB")) : null)
+                                                @(orgManure.ApplicationDate != null ? orgManure.ApplicationDate?.ToLocalTime().Date.ToString("dd/MM/yyyy", CultureInfo.GetCultureInfo("en-GB")) : null)
                                             </td>
                                             <td class="govuk-table__cell">
                                                 @string.Format("{0} {1}", orgManure.ApplicationRate, orgManure.RateUnit)

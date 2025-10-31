@@ -167,8 +167,7 @@
                                 <td class="govuk-table__cell">@(Model.PreviousCroppings.HasGreaterThan30PercentClover.Value == true ? Resource.lblYes : Resource.lblNo)</td>
                             </tr>
                         }
-                        @if (Model.PreviousCroppings.HasGreaterThan30PercentClover != null && Model.PreviousCroppings.HasGreaterThan30PercentClover == false)
-                        {
+                       
                             @if (ViewBag.SoilNitrogenSupplyItem != null)
                             {
                                 <tr class="govuk-table__row">
@@ -176,7 +175,6 @@
                                     <td class="govuk-table__cell">@ViewBag.SoilNitrogenSupplyItem</td>
                                 </tr>
                             }
-                        }
                     }
 
                 </tbody>

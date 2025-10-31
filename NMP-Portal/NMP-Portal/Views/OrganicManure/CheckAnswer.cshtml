@@ -700,18 +700,20 @@
                     {
                         <govuk-summary-list-row class=@(string.IsNullOrWhiteSpace(Model.DefaultNutrientValue)?"govuk-error-message":"")>
                             <govuk-summary-list-row-key>
-                                @(Model.DefaultNutrientValue == Resource.lblYesUseTheseValues ? string.Format(Resource.lblStandardNutrientValuesWhwnWeHaveValues, Model.ManureTypeName, Model.DefaultFarmManureValueDate.Value.ToLocalTime().Date.ToString("dd MMMM yyyy", CultureInfo.GetCultureInfo("en-GB"))) :
-                                    string.Format(Resource.lblDoYouWantToUseTheseNutrientValuesFromRB209, Model.ManureTypeName))
+                               @*  @(Model.DefaultNutrientValue == Resource.lblYesUseTheseValues ? string.Format(Resource.lblStandardNutrientValuesWhwnWeHaveValues, Model.ManureTypeName, Model.DefaultFarmManureValueDate.Value.ToLocalTime().Date.ToString("dd MMMM yyyy", CultureInfo.GetCultureInfo("en-GB"))) :
+                                    string.Format(Resource.lblDoYouWantToUseTheseNutrientValuesFromRB209, Model.ManureTypeName)) *@
+                                    @(Model.DefaultNutrientValue == Resource.lblYesUseTheseValues ? string.Format(Resource.lblDefaultNutrientValueContentSecond, Model.ManureTypeName) :
+                                                                string.Format(Resource.lblNutrientValuesFor, Model.ManureTypeName))
                                 @* @string.Format(Resource.lblDoYouWantToUseTheseNutrientValuesFromRB209, Model.ManureTypeName) *@
                             </govuk-summary-list-row-key>
                             <govuk-summary-list-row-value>
-                                @((!string.IsNullOrWhiteSpace(Model.DefaultNutrientValue)) ? (Model.DefaultNutrientValue == Resource.lblYes ? Resource.lblYesUseTheseStandardNutrientValues : Model.DefaultNutrientValue) : Resource.lblNotSet)
+                                                          @((!string.IsNullOrWhiteSpace(Model.DefaultNutrientValue)) ? ((Model.DefaultNutrientValue == Resource.lblYes || Model.DefaultNutrientValue == Resource.lblYesUseTheseStandardNutrientValues) ? Resource.lblYesUseTheseValues : Model.DefaultNutrientValue) : Resource.lblNotSet)
                             </govuk-summary-list-row-value>
                             <govuk-summary-list-row-actions>
                                 <govuk-summary-list-row-action asp-action="DefaultNutrientValues" asp-controller="OrganicManure">@Resource.lblChange
                                    <span class="govuk-visually-hidden">
-                                       @(Model.DefaultNutrientValue == Resource.lblYesUseTheseValues ? string.Format(Resource.lblStandardNutrientValuesWhwnWeHaveValues, Model.ManureTypeName, Model.DefaultFarmManureValueDate.Value.ToLocalTime().Date.ToString("dd MMMM yyyy", CultureInfo.GetCultureInfo("en-GB"))) :
-                                    string.Format(Resource.lblDoYouWantToUseTheseNutrientValuesFromRB209, Model.ManureTypeName))
+                                       @(Model.DefaultNutrientValue == Resource.lblYesUseTheseValues ? string.Format(Resource.lblDefaultNutrientValueContentSecond, Model.ManureTypeName) :
+                                                                                string.Format(Resource.lblNutrientValuesFor, Model.ManureTypeName))
                                     </span>
                                 </govuk-summary-list-row-action>
                             </govuk-summary-list-row-actions>
@@ -725,11 +727,11 @@
                             {
                                 <govuk-summary-list-row class=@(string.IsNullOrWhiteSpace(Model.DefaultNutrientValue)?"govuk-error-message":"")>
                                     <govuk-summary-list-row-key>
-                                        @string.Format(Resource.lblDoYouWantToUseExistingNutrientValuesFor, Model.OtherMaterialName)
-                                    </govuk-summary-list-row-key>
-                                    <govuk-summary-list-row-value>
-                                        @(!string.IsNullOrWhiteSpace(Model.DefaultNutrientValue) ? (Model.DefaultFarmManureValueDate != null ? string.Format(Resource.lblYesUseTheseValuesFromDate, Model.DefaultFarmManureValueDate.Value.ToLocalTime().Date.ToString("dd MMMM yyyy", CultureInfo.GetCultureInfo("en-GB"))) : Resource.lblYesUseTheseStandardNutrientValues) : Resource.lblNotSet)
-                                    </govuk-summary-list-row-value>
+                                            @string.Format(Resource.lblDefaultNutrientValueContentSecond, Model.OtherMaterialName)
+                                        </govuk-summary-list-row-key>
+                                        <govuk-summary-list-row-value>
+                                            @(!string.IsNullOrWhiteSpace(Model.DefaultNutrientValue) ? Resource.lblYesUseTheseValues : Resource.lblNotSet)
+                                        </govuk-summary-list-row-value>
                                     <govuk-summary-list-row-actions>
                                         <govuk-summary-list-row-action asp-action="DefaultNutrientValues" asp-controller="OrganicManure">@Resource.lblChange
                                             <span class="govuk-visually-hidden">

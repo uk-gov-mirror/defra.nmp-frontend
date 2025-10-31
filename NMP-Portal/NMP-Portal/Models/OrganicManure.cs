@@ -9,7 +9,7 @@ namespace NMP.Portal.Models
         public int ManagementPeriodID { get; set; }
         public int ManureTypeID { get; set; }
         public string? ManureTypeName { get; set; }
-        public DateTime ApplicationDate { get; set; }
+        public DateTime? ApplicationDate { get; set; }
         public bool Confirm { get; set; }
         public decimal? N { get; set; }
         public decimal? P2O5 { get; set; }
